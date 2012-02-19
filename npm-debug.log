@@ -1,0 +1,114 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'nodemon', '-g' ]
+info using npm@1.1.0-3
+info using node@v0.6.9
+verbose config file /Users/VedTopkar/.npmrc
+verbose config file /usr/local/etc/npmrc
+verbose config file /usr/local/lib/node_modules/npm/npmrc
+verbose cache add [ 'nodemon', null ]
+silly cache add: name, spec, args [ undefined, 'nodemon', [ 'nodemon', null ] ]
+verbose parsed url { pathname: 'nodemon', path: 'nodemon', href: 'nodemon' }
+verbose addNamed [ 'nodemon', '' ]
+verbose addNamed [ null, '' ]
+silly name, range, hasData [ 'nodemon', '', false ]
+verbose raw, before any munging nodemon
+verbose url resolving [ 'https://registry.npmjs.org/', './nodemon' ]
+verbose url resolved https://registry.npmjs.org/nodemon
+verbose etag "9UT3UJDUPJA5KHO14YSBXFJC9"
+http GET https://registry.npmjs.org/nodemon
+http 304 https://registry.npmjs.org/nodemon
+silly get cb [ 304,
+silly get cb   { server: 'CouchDB/1.1.0 (Erlang OTP/R14B04)',
+silly get cb     etag: '"9UT3UJDUPJA5KHO14YSBXFJC9"',
+silly get cb     date: 'Sun, 19 Feb 2012 06:45:22 GMT',
+silly get cb     'content-length': '0' } ]
+verbose etag nodemon from cache
+silly name, range, hasData 2 [ 'nodemon', '', true ]
+silly versions [ 'nodemon',
+silly versions   [ '0.1.4',
+silly versions     '0.1.5',
+silly versions     '0.1.6',
+silly versions     '0.1.7',
+silly versions     '0.1.8',
+silly versions     '0.2.0',
+silly versions     '0.2.1',
+silly versions     '0.2.2',
+silly versions     '0.3.0',
+silly versions     '0.3.1',
+silly versions     '0.3.2',
+silly versions     '0.4.0',
+silly versions     '0.4.1',
+silly versions     '0.5.0',
+silly versions     '0.5.1',
+silly versions     '0.5.2',
+silly versions     '0.5.3',
+silly versions     '0.5.4',
+silly versions     '0.5.5',
+silly versions     '0.5.6',
+silly versions     '0.5.7',
+silly versions     '0.6.0',
+silly versions     '0.6.1',
+silly versions     '0.6.2',
+silly versions     '0.6.3',
+silly versions     '0.6.4',
+silly versions     '0.6.5',
+silly versions     '0.6.6',
+silly versions     '0.6.7',
+silly versions     '0.6.8',
+silly versions     '0.6.9' ] ]
+verbose bin dist [ '0.6-ares1.7.5-DEV-evundefined-openssl0.9.8r-v83.6.6.19-darwin-x64-11.3.0',
+verbose bin dist   { shasum: '7547ff336d3ff1313344a890f3d13a378066ced2',
+verbose bin dist     tarball: 'http://registry.npmjs.org/nodemon/-/nodemon-0.6.9.tgz' } ]
+verbose caching /Users/VedTopkar/.npm/nodemon/0.6.9/package/package.json
+verbose loadDefaults nodemon@0.6.9
+silly resolved [ { name: 'nodemon',
+silly resolved     homepage: 'http://github.com/remy/nodemon',
+silly resolved     author: { name: 'Remy Sharp', url: 'http://github.com/remy' },
+silly resolved     bin: { nodemon: './nodemon.js' },
+silly resolved     repository: { type: 'git', url: 'git://github.com/remy/nodemon.git' },
+silly resolved     description: 'Simple monitor script for use during development of a node.js app.',
+silly resolved     keywords: 
+silly resolved      [ 'monitor',
+silly resolved        'development',
+silly resolved        'restart',
+silly resolved        'autoload',
+silly resolved        'reload',
+silly resolved        'terminal' ],
+silly resolved     version: '0.6.9',
+silly resolved     preferGlobal: 'true',
+silly resolved     licenses: [ { type: 'MIT', url: 'http://rem.mit-license.org' } ],
+silly resolved     main: './nodemon',
+silly resolved     _id: 'nodemon@0.6.9',
+silly resolved     dependencies: {},
+silly resolved     devDependencies: {},
+silly resolved     optionalDependencies: {},
+silly resolved     engines: { node: '*' },
+silly resolved     _engineSupported: true,
+silly resolved     _npmVersion: '1.1.0-3',
+silly resolved     _nodeVersion: 'v0.6.9',
+silly resolved     _defaultsLoaded: true } ]
+info into /usr/local/lib nodemon@0.6.9
+info installOne nodemon@0.6.9
+info unbuild /usr/local/lib/node_modules/nodemon
+verbose from cache /Users/VedTopkar/.npm/nodemon/0.6.9/package/package.json
+verbose mkdir (expected) error ENOENT, no such file or directory '/usr/local/lib/node_modules/___nodemon.npm'
+verbose unpack_ uid, gid [ undefined, undefined ]
+verbose unpackTarget /usr/local/lib/node_modules/nodemon
+ERR! Could not create /usr/local/lib/node_modules/___nodemon.npm
+ERR! error installing nodemon@0.6.9
+info unbuild /usr/local/lib/node_modules/nodemon
+verbose installOne cb nodemon@0.6.9
+ERR! Error: EACCES, permission denied '/usr/local/lib/node_modules/___nodemon.npm'
+ERR! 
+ERR! Please try running this command again as root/Administrator.
+ERR! 
+ERR! System Darwin 11.3.0
+ERR! command "node" "/usr/local/bin/npm" "install" "nodemon" "-g"
+ERR! cwd /Users/VedTopkar/Documents/code/inspirio
+ERR! node -v v0.6.9
+ERR! npm -v 1.1.0-3
+ERR! path /usr/local/lib/node_modules/___nodemon.npm
+ERR! code EACCES
+ERR! message EACCES, permission denied '/usr/local/lib/node_modules/___nodemon.npm'
+ERR! errno {}
+verbose exit [ 1, true ]
