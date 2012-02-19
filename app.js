@@ -31,5 +31,9 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 
-app.listen(22599);
-console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+//Define port and listen on it and log it in console
+
+var port = 22599;
+
+app.listen(port);
+console.log("Express server listening on port %d in %s mode", port, app.settings.env);
