@@ -29,7 +29,11 @@ app.configure('production', function(){
 
 // Routes
 
-app.get('/', routes.index);
+app.get('/', function(req,res){res.render('index')});
+app.get('/url/:url',function(req,res){
+  var url = req.params.url;
+  res.send("You have been sparked by the page at the url '" + url + '\'');
+})
 
 //Define port and listen on it and log it in console
 
