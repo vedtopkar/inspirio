@@ -8,10 +8,15 @@ var express = require('express')
   , mongoose = require('mongoose')
   , connect = require('connect')
   , mongojs = require('mongojs')
-  , everyauth = require('everyauth');
+  , passport = require('passport')
+  , util = require('util')
+  , LocalStrategy = require('passport-local').Strategy;
+
+function findById(id, err) {
+  
+}
 
 var app = module.exports = express.createServer();
-
 
 // Server Configuration
 
