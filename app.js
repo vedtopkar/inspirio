@@ -7,7 +7,8 @@ var express = require('express')
   , routes = require('./routes')
   , mongoose = require('mongoose')
   , connect = require('connect')
-  , mongojs = require('mongojs');
+  , mongojs = require('mongojs')
+  , everyauth = require('everyauth');
 
 var app = module.exports = express.createServer();
 
@@ -18,10 +19,13 @@ app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.bodyParser());
-  app.set('view options',{layout:false});
+  app.set('view options',{layout:true});
+  app.use(express.cookieParser());
+  app.use(express.session({ secret: "fhs rocks"}));
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
+  app.dynamicHelpers({flash: function(req,res){return req.flash();}});
 });
 
 app.configure('development', function(){
@@ -42,8 +46,8 @@ var db = mongojs.connect(databaseURL, collections);
 
 // Fixed Routes
 
-app.get('/', routes.index);
-app.get('/short',function(req,res){res.render('short')});
+app.get('/', function(req,res){res.render('index');});
+app.get('/:url',function(req,res){req.flash('info','You have come to the non-index page \''+req.params.url+"\'");res.render(req.params.url);});
 
 
 // Dynamic Routes
@@ -55,8 +59,8 @@ app.get('/url/:url', function(req,res){
 
 app.get('/short/:shortExtension',function(req,res){
   var shortExtension = req.params.shortExtension;
-  var url = db.shortLinks.find({shortExtension:shortExtension},{link:1});
-  console.log(url);
+  var findLink = db.shortLinks.find({shortExtension:shortExtension},{link:1});
+  res.redirect('http://' + findLink);
   res.end();
   });
 
@@ -65,7 +69,7 @@ app.get('/short/:shortExtension',function(req,res){
 app.post('/short',function(req,res){
   var allChar = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789";
   var stringLength = 4;
-  var shortExtension = "7s93";
+  var shortExtension = "";
   for(var i = 0; i<stringLength;i++)
     shortExtension += allChar.charAt(Math.floor(Math.random()*allChar.length));
   db.shortLinks.save({shortExtension: shortExtension, link: req.param('link')});
@@ -73,6 +77,7 @@ app.post('/short',function(req,res){
   res.write('vedtopkar.webfactional.com/' + shortExtension);
   res.end();
   });
+
 
 
 // Define port and listen on it

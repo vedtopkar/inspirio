@@ -20,14 +20,12 @@ body {
 	         url('/fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
 	    font-weight: normal;
 	    font-style: normal;
-
 	}
 
 #header {
   background: #111;
   color: #fff;
-  font: normal normal normal 30px/1 'Bebas Neue', 'BebasNeue', 'BebasNeueRegular', 'League Gothic', 'Helvetica Neue Condensed Bold', 'Helvetica Bold', Helvetica, Arial, sans-serif;
-  text-transform: capitalize;
+  height:75px;
 }
 
 #period {
@@ -49,6 +47,11 @@ body {
   border:3px solid #0c0c0c;
 }
 
+#logo {
+  font: normal normal normal 30px/1 'Bebas Neue', 'BebasNeue', 'BebasNeueRegular', 'League Gothic', 'Helvetica Neue Condensed Bold', 'Helvetica Bold', Helvetica, Arial, sans-serif;
+  text-transform: capitalize;
+}
+
 #io {
   font-family: Georgia;
   font-size: 64%;
@@ -56,4 +59,29 @@ body {
   margin-left:-6px;
   text-shadow: -3px 0 0 #0c0c0c;
   text-transform: lowercase;
+}
+
+.button {
+  float:right;
+  padding:4px;
+  font-size:1.1em;
+  background:#D00;
+  text-align:center;
+  width:3em;
+  border-radius:25px;
+  text-shadow: -3px #000;
+}
+
+#flash {
+  margin: 0 auto;
+  padding: 10px;
+  text-align:center;
+  background: RGBA(246, 255, 0, 0.37);
+}
+
+#error {
+  margin: 0 auto;
+  padding: 10px;
+  text-align:center;
+  background: RGBA(256, 0, 0, 0.45);
 }

@@ -6,4 +6,11 @@ html
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Jockey+One:400')
   body
     #wrapper
-      <h1>INSPIR<span id="period">.</span><span id="io">io</span></h1> 
+      #header
+        #logo
+          <h1>INSPIR<span id="period">.</span><span id="io">io</span></h1>
+      - if (flash.info)
+        #flash!= flash.info
+      - if (flash.error)
+        #error!= flash.error
+      != body 
