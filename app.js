@@ -68,7 +68,7 @@ app.get('/short/:shortExtension',function(req,res){
 
 
 // Post Routes
-app.post('/short',function(req,res){
+app.post('/shorten',function(req,res){
   var charString = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789";
   var stringLength = 4;
   var shortExtension = "";
