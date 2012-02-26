@@ -9,8 +9,7 @@ var express = require('express')
   , connect = require('connect')
   , mongojs = require('mongojs')
   , passport = require('passport')
-  , util = require('util')
-  , LocalStrategy = require('passport-local').Strategy;
+  , util = require('util');
 
 function findById(id, err) {
   
